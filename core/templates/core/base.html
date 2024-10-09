@@ -13,14 +13,14 @@
     <header>
         <div class="logo">
           <a href="/">
-            <img src="../static/images/real-estate-logo.jpg" alt="Real Estate Co.">
+            <img src="../../static/images/real-estate-logo.jpg" alt="Real Estate Co.">
           </a>
         </div>
 
         <nav>
           <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'property_list' %}">Listings</a></li>
+            {% comment %} <li><a href="{% url 'properties' %}">Properties</a></li> {% endcomment %}
             <li><a href="{% url 'examples' %}">Examples</a></li>
           </ul>
         </nav>

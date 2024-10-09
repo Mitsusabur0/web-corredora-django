@@ -1,0 +1,40 @@
+:root {
+    --text-color: #303030;
+    --background-white: #f5f5f5;
+
+}
+
+body  {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color)
+}
+
+header {
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+    padding: 1rem 10vw;
+    background-color: var(--background-white);
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+/* Navbar, the navigation links */
+nav ul {
+    display: flex;
+    gap: 1rem;
+    color: inherit;
+}
+
+nav ul a {
+    color: inherit;
+}
+
+.logo img {
+    width: 150px;
+}
+ 
