@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Real Estate Agency{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <a href="/">
+            <img src="../static/images/real-estate-logo.jpg" alt="Real Estate Co.">
+          </a>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'property_list' %}">Listings</a></li>
+            <li><a href="{% url 'examples' %}">Examples</a></li>
+          </ul>
+        </nav>
+
+        <form class="search-form">
+          <input type="search" placeholder="Search properties...">
+          <button type="submit">Search</button>
+        </form>
+
+        {% comment %} <div class="user-actions">
+          <a href="/login">Login</a>
+          <a href="/signup">Sign Up</a>
+        </div> {% endcomment %}
+      </header>
+
+
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+
+    <footer>
+        <p>&copy; {% now "Y" %} Real Estate Agency. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
