@@ -1,13 +1,15 @@
 :root {
     --text-color: #303030;
     --background-white: #f5f5f5;
+    --background-dark: lightgrey;
 
 }
 
 body  {
     display: flex;
     flex-direction: column;
-    color: var(--text-color)
+    color: var(--text-color);
+    background-color: var(--background-dark)
 }
 
 header {
@@ -16,6 +18,7 @@ header {
     align-items: center;
     padding: 1rem 10vw;
     background-color: var(--background-white);
+    background-color: grey;
 }
 
 main {
@@ -38,3 +41,7 @@ nav ul a {
     width: 150px;
 }
  
+
+footer {
+    background-color: white;
+}

@@ -1,6 +1,37 @@
 {%extends 'core/base.html' %}
+{% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'admin_properties/css/admin_properties.css' %}">
+{% endblock extra_css %}
 
 {% block content %}
 <h1>Admin properties list</h1>
+
+
+
+
+<section>
+    <div class="container">
+        <div class="property-list">
+            {% for property in properties %}
+                <div class="property-item">
+                    <h2>{{ property.address }}</h2>
+                    <p>Type: {{ property.get_property_type_display }}</p>
+                    <p>Price: ${{ property.price }}</p>
+                    <p>{{ property.square_meters }} m2</p>
+                </div>
+            {% empty %}
+                <p>No properties available.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
 {% endblock content %}

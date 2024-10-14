@@ -1,0 +1,21 @@
+
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.property-list {
+    display: flex;
+    gap: 20px 10px ;
+    max-width: 80vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* justify-content: center; */
+}
+
+.property-item {
+    padding: 1rem 2rem;
+    border: 1px solid black;    
+    width: 16vw;
+}
