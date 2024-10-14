@@ -6,13 +6,16 @@
 {% endblock extra_css %}
 
 {% block content %}
-<h1>Admin properties list</h1>
 
 
 
+
+<h1 style="text-align: center; margin-bottom: 50px;">Admin properties list</h1>
 
 <section>
+    
     <div class="container">
+        
         <div class="property-list">
             {% for property in properties %}
                 <div class="property-item">
@@ -20,6 +23,7 @@
                     <p>Type: {{ property.get_property_type_display }}</p>
                     <p>Price: ${{ property.price }}</p>
                     <p>{{ property.square_meters }} m2</p>
+                    <p>Tipo: {{ property.offer_type }}</p>
                 </div>
             {% empty %}
                 <p>No properties available.</p>

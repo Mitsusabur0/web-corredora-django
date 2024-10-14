@@ -12,8 +12,8 @@ class Property(models.Model):
     ]
 
     OFFER_TYPE = [
-        ('LEASE', 'Arriendo'),
-        ('SELL', 'Venta')
+        ('ARRIENDO', 'Arriendo'),
+        ('VENTA', 'Venta')
     ]
     
 
