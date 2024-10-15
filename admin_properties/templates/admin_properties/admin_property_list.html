@@ -1,4 +1,4 @@
-{%extends 'core/base.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
 
 {% block extra_css %}
@@ -9,21 +9,30 @@
 
 
 
+<div class="container-col">
+    <h1>Admin properties list</h1>
+    <a href="{% url "property_add" %}" class="btn">Add Property</a>
+    <button>Eliminar propiedad</button>
+</div>
 
-<h1 style="text-align: center; margin-bottom: 50px;">Admin properties list</h1>
 
-<section>
-    
+
+<section>    
     <div class="container">
         
         <div class="property-list">
             {% for property in properties %}
                 <div class="property-item">
                     <h2>{{ property.address }}</h2>
-                    <p>Type: {{ property.get_property_type_display }}</p>
-                    <p>Price: ${{ property.price }}</p>
+                    <p>{{ property.get_property_type_display }} en {{ property.offer_type }}</p>
+                    <p>{{ property.offer_type }}</p>
+                    <p>${{ property.price }}</p>
                     <p>{{ property.square_meters }} m2</p>
-                    <p>Tipo: {{ property.offer_type }}</p>
+                    <p>ggcc: {{ property.common_expenses }}</p>
+                    <p>Habitaciones: {{ property.bedrooms }}</p>
+                    <p>Baños: {{ property.bathrooms }}</p>
+
+
                 </div>
             {% empty %}
                 <p>No properties available.</p>

@@ -15,7 +15,7 @@ class Property(models.Model):
         ('ARRIENDO', 'Arriendo'),
         ('VENTA', 'Venta')
     ]
-    
+                    
 
     address = models.CharField(max_length=255)
     property_type = models.CharField(max_length=10, choices=PROPERTY_TYPES)

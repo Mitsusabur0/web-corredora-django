@@ -4,6 +4,14 @@
     display: flex;
     justify-content: center;
 }
+.container-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
 
 .property-list {
     display: flex;
