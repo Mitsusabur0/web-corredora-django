@@ -27,3 +27,18 @@
     border: 1px solid black;    
     width: 22.75%;
 }
+
+.add_property_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add_property_form p {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid grey; */
+    box-shadow: 0 0 4px grey;
+    padding: 2px;
+    /* background-color: white; */
+}

@@ -1,12 +1,16 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'admin_properties/css/admin_properties.css' %}">
+{% endblock extra_css %}
+
 
 {% block content %}
 
-<div class="container">
+<div class="container-col">
     <h1>Add new property</h1>
 
-    <form action="" method="post">
+    <form class="add_property_form" action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn">Save property</button>
