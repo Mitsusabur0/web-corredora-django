@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'admin_properties',
     'core',
     'front_properties',
+    'django.contrib.humanize',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

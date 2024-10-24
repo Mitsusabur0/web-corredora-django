@@ -7,6 +7,8 @@
     <title>{% block title %}Real Estate Agency{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -21,7 +23,8 @@
           <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'a_clients_list' %}">Clients</a></li>
-            <li><a href="{% url 'a_properties_list' %}">Properties</a></li>
+            {% comment %} <li><a href="{% url 'a_properties_list' %}">Properties</a></li> {% endcomment %}
+            <li><a href="{% url 'property_management' %}">Properties 2</a></li>
             <li><a href="{% url 'a_managements_list' %}">Managements</a></li>
             <li><a href="{% url 'examples' %}">Examples</a></li>
             <li><a href="http://127.0.0.1:8000/admin/" target="_blank">Admin</a></li>

@@ -31,7 +31,7 @@
 .add_property_form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px;  
 }
 
 .add_property_form p {

@@ -1,20 +1,67 @@
-{% extends 'core/base.html' %}
-{% load static %}
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'admin_properties/css/admin_properties.css' %}">
-{% endblock extra_css %}
-
+<!-- templates/properties/property_form.html -->
+{% extends "core/base.html" %}
+{% load widget_tweaks %} 
 
 {% block content %}
+<div class="container mx-auto px-4 py-6">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">
+            {% if form.instance.pk %}
+                Edit Property
+            {% else %}
+                Add New Property
+            {% endif %}
+        </h1>
 
-<div class="container-col">
-    <h1>Add new property</h1>
+        <div class="bg-white rounded-lg shadow p-6">
+            <form method="post" class="space-y-6">
+                {% csrf_token %}
+                
+                {% if form.errors %}
+                <div class="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded">
+                    Please correct the errors below.
+                </div>
+                {% endif %}
 
-    <form class="add_property_form" action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn">Save property</button>
-    </form>
+                {% for field in form %}
+                <div class="space-y-2">
+                    <label for="{{ field.id_for_label }}" 
+                           class="block text-sm font-medium text-gray-700">
+                        {{ field.label }}
+                    </label>
+                    
+                    {% if field.field.widget.input_type == 'checkbox' %}
+                        <div class="mt-1">
+                            {{ field }}
+                        </div>
+                    {% else %}
+                        {{ field|add_class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm" }}
+                    {% endif %}
+                    
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <p class="text-red-600 text-sm">{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    {% if field.help_text %}
+                        <p class="text-gray-500 text-sm">{{ field.help_text }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <div class="flex justify-end space-x-4">
+                    <a href="{% url 'property_management' %}" 
+                       class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                        Cancel
+                    </a>
+                    <button type="submit" 
+                            class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                        {% if form.instance.pk %}Update{% else %}Create{% endif %}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-
-{% endblock content %}
+{% endblock %}
